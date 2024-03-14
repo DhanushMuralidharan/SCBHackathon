@@ -19,6 +19,14 @@ class Customer(Base):
   date_opened = Column(DateTime, nullable=False)
   processed_ib_cheques = relationship("ProcessedIbCheque", back_populates="customer")
 
+  def __init__(self, name, account_number, balance, ifsc, signature, date_opened):
+    self.name = name
+    self.account_number = account_number
+    self.balance = balance
+    self.ifsc = ifsc
+    self.signature = signature
+    self.date_opened = datetime.datetime.today()
+
 
 class IbCheque(Base):
   __tablename__ = "ib_cheque"
@@ -60,3 +68,13 @@ class ProcessedIbCheque(Base):
   # Foreign key relationship with customer table
   customer = relationship("Customer", back_populates="processed_ib_cheques")
 
+class BankUser(Base):
+  __tablename__ = "bank_user"
+
+  BANK = Column(Text,nullable=False)  
+  IFSC = Column(Text, nullable=False, unique=True,primary_key=True)
+  BRANCH = Column(Text,nullable=False)
+  DISTRICT = Column(Text,nullable=False)
+  STATE = Column(Text,nullable=False)
+  CITY = Column(Text,nullable=False)
+  password = Column(Text, nullable=False)
