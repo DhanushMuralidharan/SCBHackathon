@@ -14,6 +14,7 @@ class Customer(Base):
   name = Column(Text, nullable=False)
   account_number = Column(Text, nullable=False, unique=True,primary_key=True)
   balance = Column(Float, nullable=False)
+  ifsc = Column(Float, nullable=False)
   signature = Column(BLOB, nullable=False)
   date_opened = Column(DateTime, nullable=False)
   processed_ib_cheques = relationship("ProcessedIbCheque", back_populates="customer")
@@ -25,6 +26,7 @@ class IbCheque(Base):
   cheque_id = Column(Text, nullable=False, unique=True,primary_key=True)
   image = Column(BLOB, nullable=False)
   status = Column(Text, nullable=False)
+  ifsc = Column(Float, nullable=False)
 
   def __init__(self, chqeue_id, image, status):
     self.chqeue_id = str(uuid4())
@@ -37,6 +39,7 @@ class ObCheque(Base):
   cheque_id = Column(Text, nullable=False, unique=True,primary_key=True)
   image = Column(BLOB, nullable=False)
   status = Column(Text, nullable=False)
+  ifsc = Column(Float, nullable=False)
 
 
   def __init__(self, chqeue_id, image, status):
