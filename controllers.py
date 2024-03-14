@@ -41,21 +41,54 @@ def dashboard():
     else:
         return render_template('dashboard.html')
 
-@app.route('/incoming')
-def incoming():
+@app.route('/incoming/add',methods=['GET','POST'])
+def Addincoming():
     if 'user' not in session.keys() or session['user'] is None:
         print("You must be authenticated first!")
         return redirect(url_for('login'))
     else:
-        return render_template('incoming_cheque.html')
+        if request.method == 'GET':
+            return render_template('add_in_ch.html')
+        elif request.method == 'POST':
+            obj = IbCheque(request.files['file'].read(),'pending',session['user'])
+            dbSession.add(obj)
+            dbSession.commit()
+            return redirect(url_for('incoming'))
 
-@app.route('/outgoing')
+@app.route('/outgoing/add',methods=['POST','GET'])
+def Addoutgoing():
+    if 'user' not in session.keys() or session['user'] is None:
+        print("You must be authenticated first!")
+        return redirect(url_for('login'))
+    else:
+        if request.method == 'GET':
+            return render_template('add_out_ch.html')
+        elif request.method == 'POST':
+            obj = ObCheque(request.files['file'].read(),'pending',session['user'])
+            dbSession.add(obj)
+            dbSession.commit()
+            return redirect(url_for('outgoing'))
+        
+@app.route('/outgoing',methods=['GET'])
 def outgoing():
     if 'user' not in session.keys() or session['user'] is None:
         print("You must be authenticated first!")
         return redirect(url_for('login'))
     else:
-        return render_template('outgoing_cheque.html')
+        if request.method == 'GET':
+            cheques = dbSession.query(ObCheque).all()
+            return render_template('outgoing_cheques.html',cheques=cheques)
+        
+@app.route('/incoming',methods=['GET'])
+def incoming():
+    if 'user' not in session.keys() or session['user'] is None:
+        print("You must be authenticated first!")
+        return redirect(url_for('login'))
+    else:
+        if request.method == 'GET':
+            cheques = dbSession.query(IbCheque).all()
+            return render_template('incoming_cheques.html',cheques=cheques)
+        
 
 @app.route('/logout')
 def logout():

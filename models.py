@@ -34,12 +34,13 @@ class IbCheque(Base):
   cheque_id = Column(Text, nullable=False, unique=True,primary_key=True)
   image = Column(BLOB, nullable=False)
   status = Column(Text, nullable=False)
-  ifsc = Column(Float, nullable=False)
+  ifsc = Column(Text, nullable=False)
 
-  def __init__(self, chqeue_id, image, status):
-    self.chqeue_id = str(uuid4())
+  def __init__(self, image, status,ifsc):
+    self.cheque_id = str(uuid4())
     self.image = image
     self.status = status
+    self.ifsc = ifsc
 
 class ObCheque(Base):
   __tablename__ = "ob_cheque"
@@ -47,13 +48,15 @@ class ObCheque(Base):
   cheque_id = Column(Text, nullable=False, unique=True,primary_key=True)
   image = Column(BLOB, nullable=False)
   status = Column(Text, nullable=False)
-  ifsc = Column(Float, nullable=False)
+  ifsc = Column(Text, nullable=False)
 
 
-  def __init__(self, chqeue_id, image, status):
-    self.chqeue_id = str(uuid4())
+  def __init__(self,image, status,ifsc):
+    self.cheque_id = str(uuid4())
     self.image = image
     self.status = status
+    self.ifsc = ifsc
+
 
 class ProcessedIbCheque(Base):
   __tablename__ = "processed_ib_cheque"
