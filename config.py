@@ -7,6 +7,11 @@ import os
 
 app = Flask(__name__)
 
+
+app.config['SECRET_KEY']= os.getenv('SESSIONPW')
+app.config['SECURITY_PASSWORD_SALT'] =  os.getenv('SALT')
+app.app_context().push()
+
 current_dir = os.path.abspath(os.path.dirname(__file__))
 
 conn = 'sqlite:///'+ os.path.join(current_dir, 'db.sqlite3')
