@@ -18,6 +18,10 @@ git clone https://github.com/DhanushMuralidharan/SCBHackathon.git
 
 pip install -r requirements.txt
 
+https://github.com/DhanushMuralidharan/SCBHackathon/assets/79154762/ea05bbd6-3159-4db3-bf2b-d9e97bc94906
+
+
+
 
 FRONT END OF AUTO CHEQUE
 
