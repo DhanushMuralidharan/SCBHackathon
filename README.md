@@ -9,4 +9,10 @@ Naturally, it can take long time for a single cheque to be processed which is of
 
 # Our Approach
 
-Our approach is to try minimise the human interaction in this whole chain, using OCR at the bank level we would be able to 
+Our strategy aims to minimize human involvement throughout the process by leveraging OCR technology at the bank level. The OCR model will extract essential information such as the IFSC code, payee name, amount to be paid, and signature from the cheque. This information can then be utilized to associate the cheque with the respective bank, while signature verification can be employed to authenticate the user. Through this approach, the sole responsibility of the human component would be to scan and upload the cheque to the system.
+
+# How to set up this system
+
+git clone https://github.com/DhanushMuralidharan/SCBHackathon.git
+
+pip install -r requirements.txt
