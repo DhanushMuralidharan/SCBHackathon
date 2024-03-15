@@ -17,3 +17,5 @@ Our strategy aims to minimize human involvement throughout the process by levera
 git clone https://github.com/DhanushMuralidharan/SCBHackathon.git
 
 pip install -r requirements.txt
+
+> [viedo link](https://drive.google.com/drive/folders/10nYw8MBGwS-Wp67Zm8-OluelWBb-iuwZ?usp=drive_link)
