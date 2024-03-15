@@ -8,6 +8,7 @@ Cheque OCR (Optical Character Recognition) is a technology that automates the pr
 Naturally, it can take long time for a single cheque to be processed which is often between — 7 to 14 days.
 
 # Our Approach
+![image](https://github.com/DhanushMuralidharan/SCBHackathon/assets/79152978/48efcc43-9018-40de-9e20-aa2fb1823ff9)
 
 Our strategy aims to minimize human involvement throughout the process by leveraging OCR technology at the bank level. The OCR model will extract essential information such as the IFSC code, payee name, amount to be paid, and signature from the cheque. This information can then be utilized to associate the cheque with the respective bank, while signature verification can be employed to authenticate the user. Through this approach, the sole responsibility of the human component would be to scan and upload the cheque to the system.
 
