@@ -1,3 +1,5 @@
+
+https://github.com/DhanushMuralidharan/SCBHackathon/assets/81160204/098baec0-59ba-4c31-97fa-3d76b25bf6a7
 # Introduction to Cheque OCR
 
 Cheque OCR (Optical Character Recognition) is a technology that automates the process of extracting information from paper cheques, including the amount, payee, date, and signature. Traditionally, banks and financial institutions manually process cheques, which can be time-consuming and error-prone. Cheque OCR streamlines this process by using image processing techniques and machine learning algorithms to accurately read and interpret cheque images.
@@ -18,17 +20,21 @@ git clone https://github.com/DhanushMuralidharan/SCBHackathon.git
 
 pip install -r requirements.txt
 
-FRONT END OF AUTO CHEQUE
+# FRONT END OF AUTO CHEQUE
 
 https://github.com/DhanushMuralidharan/SCBHackathon/assets/81160204/58cc5317-56ef-4b2b-a51d-2b8665beefbc
 
-OCR Data Extraction from Cheque
+# OCR Data Extraction from Cheque
 
 https://github.com/DhanushMuralidharan/SCBHackathon/assets/79154762/ea05bbd6-3159-4db3-bf2b-d9e97bc94906
 
-Regex to extract the required Data
+# Regex to extract the required Data
 
 https://github.com/DhanushMuralidharan/SCBHackathon/assets/79154762/411ee6ce-5d5d-4234-9fc7-eb253ba8fa68
+
+# Extracting signature from the right corner of cheque
+https://github.com/DhanushMuralidharan/SCBHackathon/assets/81160204/26eec412-6a2a-4a4e-b1b8-b15882ae7acf
+
 
 
 
