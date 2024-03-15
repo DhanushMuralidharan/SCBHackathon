@@ -7,6 +7,7 @@ import os
 
 app = Flask(__name__)
 
+app.jinja_env.filters['zip'] = zip
 
 app.config['SECRET_KEY']= os.getenv('SESSIONPW')
 app.config['SECURITY_PASSWORD_SALT'] =  os.getenv('SALT')

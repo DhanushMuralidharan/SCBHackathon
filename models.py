@@ -49,13 +49,14 @@ class ObCheque(Base):
   image = Column(BLOB, nullable=False)
   status = Column(Text, nullable=False)
   ifsc = Column(Text, nullable=False)
+ 
 
-
-  def __init__(self,image, status,ifsc):
+  def __init__(self,image, status,ifsc,branch):
     self.cheque_id = str(uuid4())
     self.image = image
     self.status = status
     self.ifsc = ifsc
+    self.branch = branch
 
 
 class ProcessedIbCheque(Base):

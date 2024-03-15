@@ -174,15 +174,19 @@
             <thead>
                 <tr>
                     <th>Date</th>
+                    <th>IFSC</th>
+                    <th>Branch</th>
                     <th>View Cheque</th>
                     <th>Status</th>
                 </tr>
             </thead>
             <tbody>
-                {%for cheque in cheques %}
+                {%for cheque,image in cheques|zip(images) %}
                 <tr>
                     <td>2024-03-15</td>
-                    <td><a href="#" class="view-link" onclick="openModal('0 0X8Z8EXF0mXUSLvB.jpg')">View Cheque</a></td>
+                    <td>{{cheque.ifsc}}</td>
+                    <td>{{cheque.branch}}</td>
+                    <td><a href="#" class="view-link" onclick="openModal('{{image.image}}')">View Cheque</a></td>
                     <td>{{cheque.status}}</td>
                 </tr>
                 {%endfor%}
