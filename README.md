@@ -22,6 +22,10 @@ https://github.com/DhanushMuralidharan/SCBHackathon/assets/79154762/ea05bbd6-315
 
 
 
+https://github.com/DhanushMuralidharan/SCBHackathon/assets/79154762/411ee6ce-5d5d-4234-9fc7-eb253ba8fa68
+
+
+
 
 FRONT END OF AUTO CHEQUE
 
