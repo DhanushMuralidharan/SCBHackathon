@@ -18,18 +18,22 @@ git clone https://github.com/DhanushMuralidharan/SCBHackathon.git
 
 pip install -r requirements.txt
 
+FRONT END OF AUTO CHEQUE
+
+https://github.com/DhanushMuralidharan/SCBHackathon/assets/81160204/58cc5317-56ef-4b2b-a51d-2b8665beefbc
+
+OCR Data Extraction from Cheque
+
 https://github.com/DhanushMuralidharan/SCBHackathon/assets/79154762/ea05bbd6-3159-4db3-bf2b-d9e97bc94906
 
-
+Regex to extract the required Data
 
 https://github.com/DhanushMuralidharan/SCBHackathon/assets/79154762/411ee6ce-5d5d-4234-9fc7-eb253ba8fa68
 
 
 
 
-FRONT END OF AUTO CHEQUE
 
-https://github.com/DhanushMuralidharan/SCBHackathon/assets/81160204/58cc5317-56ef-4b2b-a51d-2b8665beefbc
 
 
 
