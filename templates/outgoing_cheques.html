@@ -68,15 +68,20 @@
             background-color: #fefefe;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 70%;
-            max-height: 80%;
+            max-width: 80%;
+            max-height: 70%;
+            width: auto;
+            height: auto;
             overflow: auto;
             position: relative;
         }
-        h2,button{
+
+        h2,
+        button {
             text-align: center;
         }
-        button{
+
+        button {
             padding: 10px 20px;
             font-size: 16px;
             background-color: #007bff;
@@ -87,6 +92,7 @@
             transition: background-color 0.3s;
             margin-top: 10px;
         }
+
         .close-btn {
             color: #aaa;
             float: right;
@@ -103,6 +109,8 @@
         }
 
         .cheque-img {
+            max-width: 80%;
+            max-height: 70%;
             width: auto;
             height: auto;
         }
@@ -146,7 +154,7 @@
         }
 
         .container {
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 20px;
             background-color: #fff;
@@ -186,7 +194,8 @@
                     <td>2024-03-15</td>
                     <td>{{cheque.ifsc}}</td>
                     <td>{{cheque.branch}}</td>
-                    <td><a href="#" class="view-link" onclick="openModal('{{image.image}}')">View Cheque</a></td>
+                    <td><a href="#" class="view-link" onclick="openModal('data:image/jpeg;base64,{{ image }}')">View
+                            Cheque</a></td>
                     <td>{{cheque.status}}</td>
                 </tr>
                 {%endfor%}

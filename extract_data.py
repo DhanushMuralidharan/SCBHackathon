@@ -25,9 +25,9 @@ def sample_analyze_all_image_file(image_data):
 
     # Set the values of your computer vision endpoint and computer vision key as environment variables:
     try:
-        endpoint = 'https://trojanarmy.cognitiveservices.azure.com/'
+        endpoint = 'https://trojanarmy1.cognitiveservices.azure.com/'
         # key = '5748ca19bfe7450fb304427ade96592e'
-        key = '637a322716054b7fabe92263eb94c11b'
+        key = 'f0ec9afcf566497995cd690b2a18ddad'
 
     except KeyError:
         print("Missing environment variable 'VISION_ENDPOINT' or 'VISION_KEY'")
@@ -51,13 +51,13 @@ def sample_analyze_all_image_file(image_data):
     result = client.analyze(
         image_data=image_data,
         visual_features=[
-            VisualFeatures.TAGS,
-            VisualFeatures.OBJECTS,
-            VisualFeatures.CAPTION,
-            VisualFeatures.DENSE_CAPTIONS,
+            # VisualFeatures.TAGS,
+            # VisualFeatures.OBJECTS,
+            # VisualFeatures.CAPTION,
+            # VisualFeatures.DENSE_CAPTIONS,
             VisualFeatures.READ,
-            VisualFeatures.SMART_CROPS,
-            VisualFeatures.PEOPLE,
+            # VisualFeatures.SMART_CROPS,
+            # VisualFeatures.PEOPLE,
         ],  
         smart_crops_aspect_ratios=[0.9, 1.33],  
         gender_neutral_caption=True,  

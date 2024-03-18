@@ -35,8 +35,12 @@ def match(path1, path2):
         return float(similarity_value)
 
 
-
-path1 = '/Users/asvikamahesh/Documents/Developer/signature_verifier/modules/cropped_image copy.png'
-path2 = '/Users/asvikamahesh/Documents/Developer/signature_verifier/modules/cropped_image.png'
-similarity_value = match(path1,path2)
-print(similarity_value)
+def verify_sign(path1,path2):
+    # path1 = '/Users/asvikamahesh/Documents/Developer/signature_verifier/modules/cropped_image copy.png'
+    # path2 = '/Users/asvikamahesh/Documents/Developer/signature_verifier/modules/cropped_image.png'
+    similarity_value = match(path1,path2)
+    print(similarity_value)
+    if similarity_value > 70:
+        return True
+    else:
+        return False

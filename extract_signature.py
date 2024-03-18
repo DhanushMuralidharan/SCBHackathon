@@ -56,7 +56,10 @@ def cut_bottom_right_corner(image_path, corner_width, corner_height):
 
     # Crop the image
     cropped_img = img[y0:height, x0:width]
-    cv2.imwrite("cropped_image.png", cropped_img)
+    cv2.imwrite(r"images/signature/cropped_image.png", cropped_img)
+
+    
+
 
     # Display or save the cropped image
     #cv2.imshow('Cropped Image', cropped_img)
@@ -64,17 +67,19 @@ def cut_bottom_right_corner(image_path, corner_width, corner_height):
     # If you want to save the cropped image:
 
 
+def extract_sign(image_path):
+    inputImg= cv2.imread(fr"{image_path}")
+    if inputImg is not None:
+        gray=cv2.cvtColor(inputImg,cv2.COLOR_BGR2GRAY)
+        img=extract_signature(gray)
+        cv2.imwrite(r"images/signature/signature_extracted.jpg", img)
+        print("- step2 (signature extractor): OK")
 
-inputImg= cv2.imread(r"/Users/asvikamahesh/Documents/Developer/signature_verifier/Cheque100833.jpg")
-if inputImg is not None:
-    gray=cv2.cvtColor(inputImg,cv2.COLOR_BGR2GRAY)
-    img=extract_signature(gray)
-    cv2.imwrite("signature_extracted.jpg", img)
-    print("- step2 (signature extractor): OK")
+    #cut signature for function
+    # Example usage:
+    image_path = r"images/signature/signature_extracted.jpg"
+    corner_width = 500  # Width of the bottom right corner to be cut
+    corner_height = 500  # Height of the bottom right corner to be cut
+    cut_bottom_right_corner(image_path, corner_width, corner_height)
 
-#cut signature for function
-# Example usage:
-image_path = "/Users/asvikamahesh/Documents/Developer/signature_verifier/modules/signature_extracted.jpg"
-corner_width = 500  # Width of the bottom right corner to be cut
-corner_height = 500  # Height of the bottom right corner to be cut
-print(cut_bottom_right_corner(image_path, corner_width, corner_height))
+

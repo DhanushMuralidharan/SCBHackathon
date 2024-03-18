@@ -5,7 +5,7 @@ import requests
 def extract_ifsc_codes(data):
     if_ifsc = False
     for i in data :
-        if 'IFSC'.lower() in i.get('text').lower():
+        if 'IFS'.lower() in i.get('text').lower():
             ifsc_match = re.search(r'\b[A-Za-z0-9]{11}\b', i.get('text'))
             if_ifsc = True
     if if_ifsc == True:
@@ -20,8 +20,8 @@ def branch_name(ifsc):
     headers = {}
     response = requests.request("GET", url, headers=headers, data=payload)
     data = response.json()
+    print(data)
     return data["BRANCH"]
-
 
 # for extracting Amount
 def find_rs(data):
@@ -43,11 +43,17 @@ def extract_amount(data):
                     return i.get('text')
                 else:
                     return False
-            else:
+            else : 
                 return False
+    elif x == 0 and y == 0:
+        for i in data: 
+            if re.match(r'^₹\s', i.get('text')):
+                a = i.get('text')
+                a = a.replace('₹','').replace(' ','')
+                return a
     else :
-        False
-    
+        return False
+       
 #for extracting name
 def find_pay(data):
     for i in data : 
@@ -107,7 +113,7 @@ def extract_amountinwords(data):
     return False
 
 #for extracting date
-def is_valid_date(date_str):
+def is_valid_date1(date_str):
     try:
         # Extract day, month, and year from the string
         day = int(date_str[:2])
@@ -136,11 +142,15 @@ def extract_date(data):
     dates = []
     for i in data: 
         if len(i.get('text')) == 8:
-            if is_valid_date(i.get('text')):
+            print(i.get('text'))
+            if is_valid_date1(i.get('text')):
                 dates.append(i.get('text'))
-            else:
-                return False
-    return False
+            else: 
+                continue
+    if len(dates) == 1:
+        return dates[0]
+    else: 
+        return False
 
 #for extracting cheque number
 def find_cheque_number(data):
@@ -165,14 +175,14 @@ def extract_cheque_number(data):
     else:
         return False
     
-#for extracting account number
+#for extracting at number
 def find_accountno(data):
     for i in data : 
         if 'A/c'.lower() in i.get('text').lower():
             x,y = i['bounding_box'][2]['x'], i['bounding_box'][2]['y']
             return x,y
-        else:
-            return 0,0
+    else:
+        return 0,0
 
 def extract_accountno(data):
     x,y = find_accountno(data)
@@ -195,7 +205,6 @@ def extract_accountno(data):
             return a[0]['text']
         else :
             return False
-        
     
 from num2words import num2words
 
